@@ -1,11 +1,123 @@
 <!DOCTYPE html><html>
 <head>
-<title>Happy Birthday Anuty</title>
-</head>
-<body style="text-align:center; background:#ffd6ec; font-family:Arial; padding-top:100px;">
-<h1>🎂 Happy Birthday Anuty ❤️</h1>
-<h2>From Mithu 💕</h2>
-<p>Your surprise website is being prepared...</p>
-<h3>I Love You Anuty ❤️</h3>
-</body>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Anuty ❤️</title><style>
+body{
+margin:0;
+font-family:Arial,sans-serif;
+background:linear-gradient(135deg,#ff9ad5,#c89cff);
+text-align:center;
+color:white;
+}
+
+.container{
+padding:20px;
+}
+
+h1{
+font-size:40px;
+margin-top:20px;
+}
+
+.countdown{
+font-size:24px;
+margin:20px;
+font-weight:bold;
+}
+
+.gallery{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:10px;
+padding:20px;
+}
+
+.gallery img{
+width:150px;
+height:200px;
+object-fit:cover;
+border-radius:15px;
+box-shadow:0 0 10px rgba(0,0,0,0.3);
+}
+
+button{
+padding:15px 25px;
+font-size:18px;
+border:none;
+border-radius:30px;
+background:white;
+color:#ff1493;
+font-weight:bold;
+}
+
+#message{
+display:none;
+background:white;
+color:#ff1493;
+padding:20px;
+margin:20px;
+border-radius:20px;
+font-size:20px;
+}
+
+footer{
+padding:30px;
+font-size:22px;
+}
+</style></head><body><div class="container"><h1>🎂 Happy Birthday Anuty ❤️</h1><div class="countdown" id="countdown"></div><button onclick="showMessage()">Open Surprise 🎁</button>
+
+<div id="message">
+💖 Thank you for talking to me.<br><br>💖 Thank you for proposing to me.<br><br>
+
+💖 Thank you for thinking of me.<br><br>
+
+💖 Thank you for making memories with me.<br><br>
+
+💖 Thank you for giving me your Amma.<br><br>
+
+💖 Thank you for asking my opinion.<br><br>
+
+💖 Wish you a Happy Happyyyyy Birthday My Anutyyyy ❤️
+
+</div><div class="gallery">
+<img src="photo1.jpg">
+<img src="photo2.jpg">
+<img src="photo3.jpg">
+<img src="photo4.jpg">
+<img src="photo5.jpg">
+</div><footer>
+With Love ❤️<br>
+Mithu
+</footer></div><script>
+
+function showMessage(){
+document.getElementById("message").style.display="block";
+}
+
+function updateCountdown(){
+
+let now=new Date();
+let year=now.getFullYear();
+
+let birthday=new Date(year,5,1);
+
+if(now>birthday){
+birthday=new Date(year+1,5,1);
+}
+
+let diff=birthday-now;
+
+let days=Math.floor(diff/(1000*60*60*24));
+let hours=Math.floor((diff%(1000*60*60*24))/(1000*60*60));
+
+document.getElementById("countdown").innerHTML=
+"⏳ "+days+" Days "+hours+" Hours until Anuty's Birthday";
+}
+
+updateCountdown();
+setInterval(updateCountdown,1000);
+
+</script></body>
 </html>
